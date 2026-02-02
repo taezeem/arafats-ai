@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1911,7 +1910,7 @@ async function streamBotInChunks(fullText, baseChunkSize = 50) {
 // ===== AUTO TITLE =====
 async function generateTitle(userPrompt, botReply) {
   try {
-    const res = await fetch("https://hackoai-worker.tariqmtaezeem.workers.dev/chat", {
+    const res = await fetch("https://arafats-ai.tariqmtaezeem.workers.dev/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1983,7 +1982,7 @@ async function send() {
     if (isImage) {
   const model = document.getElementById("imageModel").value;
 
-  const res = await fetch("https://hackoai-worker.tariqmtaezeem.workers.dev/hf/img", {
+  const res = await fetch("https://arafats-ai.tariqmtaezeem.workers.dev/chat/hf/img", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt, model })
@@ -2016,7 +2015,7 @@ async function send() {
   chat.scrollTop = chat.scrollHeight;
 }
 else if (isVideo) {
-  const res = await fetch("https://hackoai-worker.tariqmtaezeem.workers.dev/hf/vid", {
+  const res = await fetch("https://arafats-ai.tariqmtaezeem.workers.dev/chat/hf/vid", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt })
@@ -2060,7 +2059,7 @@ else if (isVideo) {
 
       messages.push({ role: "user", content: prompt });
 
-      const res = await fetch("https://hackoai-worker.tariqmtaezeem.workers.dev/chat", {
+      const res = await fetch("https://arafats-ai.tariqmtaezeem.workers.dev/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ model: model, messages: messages })
